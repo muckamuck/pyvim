@@ -1,6 +1,9 @@
 " enable syntax highlighting
 syntax enable
 
+" do not wrap to the next line
+set nowrap
+
 " show line numbers
 set number
 
