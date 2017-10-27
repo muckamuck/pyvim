@@ -14,10 +14,10 @@ to make full use of the interactive debug facility. The debug facility can be ac
 
 ### Helpful Hints
 In pdb:
-* c - continue to the end or the next break-point
-* s - step into a function
-* r - return from the current function
-* b <line-number> - set a break-point at the line number
+* ```c``` - continue to the end or to the next break-point
+* ```s``` - step into a function
+* ```r``` - return from the current function
+* ```b <line-number>``` - set a break-point at the line number
 
 In vi:
 * ```vi -O <files>``` edit more than one file in vertically split panes
