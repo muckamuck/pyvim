@@ -1,3 +1,4 @@
+syntax on
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -18,6 +19,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/.vim/plugged')
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 autocmd FileType python set colorcolumn=120
@@ -26,11 +28,10 @@ let g:pymode_lint_ignore = "E501,C901"
 let g:pymode_python = 'python3'
 let python_highlight_all = 1
 
-syntax on
+set laststatus=2
+set noshowmode
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" apt-get install -y curl exuberant-ctags git ack-grep python3-dev python3-pip tree tig apt-utils build-essential cmake golang-go npm openjdk-11-jdk-headless vim-nox
 " After ':PlugInstall', cd ~/.vim/plugged/YouCompleteMe/ and
 " exexute 'python3 install.py --all'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
