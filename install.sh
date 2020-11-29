@@ -18,12 +18,7 @@ if [ -f "${HOME}/.vimrc" ]; then
     mv ${HOME}/.vimrc ${backup}/.
 fi
 
-if [ -d "${HOME}/.vim" ]; then
-    echo "Archiving .vim to ${backup}"
-    mv ${HOME}/.vim ${backup}/.
-fi
-
-for thing in .pdbrc .vim .vimrc
+for thing in .pdbrc .vimrc
 do
     echo "Installing ${thing}"
     ln -s $(pwd)/${thing} ${HOME}/${thing}
