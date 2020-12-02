@@ -24,7 +24,7 @@ call plug#end()
 
 autocmd FileType python set colorcolumn=120
 let g:pymode = 1
-let g:pymode_lint_ignore = "E501,C901"
+let g:pymode_lint_ignore = ["E501","C901"]
 let g:pymode_python = 'python3'
 let python_highlight_all = 1
 
