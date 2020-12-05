@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'itchyny/lightline.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 autocmd FileType python set colorcolumn=120
@@ -31,6 +32,8 @@ let python_highlight_all = 1
 set laststatus=2
 set noshowmode
 
+colorscheme gruvbox
+set background=dark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " After ':PlugInstall', cd ~/.vim/plugged/YouCompleteMe/ and
 " exexute 'python3 install.py --all'
