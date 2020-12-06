@@ -34,6 +34,8 @@ set noshowmode
 
 colorscheme gruvbox
 set background=dark
+
+nnoremap <leader>l :!clear && pylint %<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " After ':PlugInstall', cd ~/.vim/plugged/YouCompleteMe/ and
 " exexute 'python3 install.py --all'
