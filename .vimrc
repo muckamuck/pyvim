@@ -17,8 +17,8 @@ set encoding=utf-8
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+"Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 call plug#end()
