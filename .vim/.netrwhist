@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/ubuntu/work/login-ng/svc'
-let g:netrw_dirhist_2='/home/duket/work/service_invoke/service_invoke'
-let g:netrw_dirhist_3='/home/duket/work/stackility/example/simple_vpc'

@@ -1,45 +1,51 @@
-" enable syntax highlighting
-syntax enable
-
-" do not wrap to the next line
-set nowrap
-
-" show line numbers
-set number
-
-" set tabs to have 4 spaces
-set ts=4
-
-" indent when moving to the next line while writing code
-set autoindent
-
-" expand tabs into spaces
-set expandtab
-
-" when using the >> or << commands, shift lines by 4 spaces
+syntax on
+set noerrorbells
+set tabstop=4 softtabstop=4
 set shiftwidth=4
-
-" show a visual line under the cursor's current line
-set cursorline
-
-" show the matching part of the pair for [] {} and ()
+set expandtab
+set smartindent
+set nu
+set nowrap
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set colorcolumn=120
 set showmatch
+set encoding=utf-8
 
-" enable all Python syntax highlighting features
-let python_highlight_all = 1
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-" Pathogen load
-filetype off
-
-call pathogen#infect()
-call pathogen#helptags()
-
-filetype plugin indent on
-"syntax on
-
-let g:pymode = 1
-let g:pymode_lint_ignore = "E501,C901"
+call plug#begin('~/.vim/plugged')
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+Plug 'itchyny/lightline.vim'
+Plug 'morhetz/gruvbox'
+Plug 'romainl/vim-dichromatic'
+call plug#end()
 
 autocmd FileType python set colorcolumn=120
+let g:pymode = 1
+let g:pymode_lint_ignore = ["E501","C901"]
+let g:pymode_python = 'python3'
+let python_highlight_all = 1
 
-set nofoldenable
+set laststatus=2
+set noshowmode
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" For people with normal vision
+"colorscheme gruvbox
+"set background=dark
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" For people with color blindness
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme dichromatic
+
+nnoremap <leader>l :!clear && pylint %<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" After ':PlugInstall', cd ~/.vim/plugged/YouCompleteMe/ and
+" exexute 'python3 install.py --all'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
