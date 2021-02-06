@@ -5,6 +5,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
+"set rnu
 set nowrap
 set noswapfile
 set nobackup
@@ -12,6 +13,7 @@ set undodir=~/.vim/undodir
 set undofile
 set colorcolumn=120
 set showmatch
+set scrolloff=4
 set encoding=utf-8
 
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -43,6 +45,7 @@ set noshowmode
 " For people with color blindness
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme dichromatic
+highlight Normal guibg=NONE
 
 nnoremap <leader>l :!clear && pylint %<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
