@@ -6,9 +6,9 @@ set shiftwidth=4
 set expandtab
 "set smartindent
 "set cindent
+"set relativenumber
 set indentexpr=
 set nu
-set relativenumber
 set nowrap
 set noswapfile
 set nobackup
@@ -29,7 +29,12 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'tjdevries/nlua.nvim'
 Plug 'tjdevries/lsp_extensions.nvim'
 Plug 'romainl/vim-dichromatic'
+Plug 'itchyny/lightline.vim'
 call plug#end()
+
+" Status line stuff for lightline
+set laststatus=2
+set noshowmode
 
 "lua require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
