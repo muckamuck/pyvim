@@ -20,8 +20,9 @@ set encoding=utf-8
 set guicursor=
 set nohlsearch
 set termguicolors
-set scrolloff=8
+set scrolloff=4
 set signcolumn=yes
+set noincsearch
 
 call plug#begin('~/.nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
