@@ -31,6 +31,7 @@ Plug 'tjdevries/nlua.nvim'
 Plug 'tjdevries/lsp_extensions.nvim'
 Plug 'romainl/vim-dichromatic'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Status line stuff for lightline
@@ -51,7 +52,17 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 let g:completion_trigger_keyword_length = 1
-let g:completion_timer_cycle = 300
+let g:completion_timer_cycle = 200
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 colorscheme dichromatic
 highlight Normal guibg=none
