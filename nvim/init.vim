@@ -4,10 +4,10 @@ set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-"set smartindent
+set smartindent
 "set cindent
 "set relativenumber
-set indentexpr=
+"set indentexpr=
 set nu
 set nowrap
 set noswapfile
@@ -40,6 +40,7 @@ set noshowmode
 "lua require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach}
 
 autocmd BufEnter * lua require'completion'.on_attach()
 
