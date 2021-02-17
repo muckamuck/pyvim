@@ -65,3 +65,5 @@ let g:lightline = {
 
 colorscheme dichromatic
 highlight Normal guibg=none
+
+nnoremap <leader>l :!pylint %<cr>
