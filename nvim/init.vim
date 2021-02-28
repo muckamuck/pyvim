@@ -32,6 +32,9 @@ Plug 'tjdevries/lsp_extensions.nvim'
 Plug 'romainl/vim-dichromatic'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " Status line stuff for lightline
@@ -68,3 +71,11 @@ colorscheme dichromatic
 highlight Normal guibg=none
 
 nnoremap <leader>l :!pylint %<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fs <cmd>Telescope grep_string<cr>
+nnoremap <leader>fb <cmd>Telescope git_branches<cr>
+"nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+"nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+"nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
