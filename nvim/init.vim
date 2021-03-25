@@ -35,6 +35,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'ThePrimeagen/neovim-irc-ui'
 call plug#end()
 
 " Status line stuff for lightline
@@ -45,6 +46,7 @@ set noshowmode
 lua require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
 
 autocmd BufEnter * lua require'completion'.on_attach()
 
@@ -55,7 +57,7 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 let g:completion_trigger_keyword_length = 1
-let g:completion_timer_cycle = 200
+"let g:completion_timer_cycle = 200
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
