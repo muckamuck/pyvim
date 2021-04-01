@@ -32,6 +32,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " Status line stuff for lightline
@@ -72,3 +73,8 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fs <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope git_branches<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <TAB> <C-w>w
+nnoremap <C-n> :n<CR>
+nnoremap <C-p> :N<CR>
+cnoremap Q :qa<CR>
+inoremap <leader>c <C-o>:call NERDComment(0,"toggle")<C-m>
