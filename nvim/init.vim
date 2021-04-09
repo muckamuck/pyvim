@@ -43,6 +43,7 @@ lua require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach}
 lua require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
 
 autocmd BufEnter * lua require'completion'.on_attach()
 
