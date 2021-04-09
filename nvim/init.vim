@@ -76,5 +76,4 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <TAB> <C-w>w
 nnoremap <C-n> :n<CR>
 nnoremap <C-p> :N<CR>
-cnoremap Q :qa<CR>
 inoremap <leader>c <C-o>:call NERDComment(0,"toggle")<C-m>
