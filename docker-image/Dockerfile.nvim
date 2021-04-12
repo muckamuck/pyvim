@@ -1,0 +1,7 @@
+FROM nvim-base
+RUN cd /src/neovim/; \
+    git pull; \
+    make CMAKE_BUILD_TYPE=RelWithDebInfo; \
+    make -j 4 install
+
+CMD ["/bin/bash"]
