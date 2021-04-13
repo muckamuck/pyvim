@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
+ENV user=chuck
+ENV uid=501
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y
@@ -14,7 +16,9 @@ RUN apt-get install -y \
         pkg-config \
         git \
         unzip \
-        language-pack-en
+        language-pack-en \
+        clangd \
+        byobu
 
 RUN apt-get install -y \
         lua5.3 \
@@ -27,11 +31,14 @@ RUN pip3 install virtualenv \
         pyls-black \
         neovim
 
-RUN npm install -g typescript typescript-language-server
+RUN npm install -g typescript \
+        typescript-language-server \
+        bash-language-server \
+        yaml-language-server
 
-RUN useradd -d /home/chuck -m -k /etc/skel -u 501 -s /bin/bash chuck
+RUN useradd -d /home/$user -m -k /etc/skel -u $uid -s /bin/bash $user
 RUN apt-get install -y sudo
-RUN echo "chuck ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/chuck
+RUN echo "$user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$user
 
 RUN mkdir /src; \
     cd /src; \
