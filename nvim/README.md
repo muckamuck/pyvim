@@ -19,9 +19,14 @@ apt-get install -y \
 
 pip3 install virtualenv \
     python-language-server[all] \
-    pyls-black
+    pyls-black \
+    neovim
 
-npm install -g typescript typescript-language-server
+npm install -g typescript \
+    typescript-language-server \
+    bash-language-server \
+    yaml-language-server \
+    neovim
 ```
 
 
