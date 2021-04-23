@@ -15,12 +15,14 @@ apt-get install -y \
     lua5.3 \
     npm \
     python3-dev \
-    python3-pip
+    python3-pip \
+    ripgrep
 
 pip3 install virtualenv \
     python-language-server[all] \
     pyls-black \
-    neovim
+    neovim \
+    pdbpp
 
 npm install -g typescript \
     typescript-language-server \
@@ -29,6 +31,7 @@ npm install -g typescript \
     neovim
 ```
 
+---
 
 ```bash
 mkdir -p ${HOME}/.nvim/undodir
