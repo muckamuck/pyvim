@@ -1,3 +1,8 @@
+#### Specific neovim commit:
+`a5ac2f45ff84a688a09479f357a9909d5b914294`
+
+---
+
 ```bash
 # as superman
 apt-get install -y \
