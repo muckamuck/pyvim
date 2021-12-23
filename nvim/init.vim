@@ -50,15 +50,13 @@ call plug#end()
 set laststatus=2
 set noshowmode
 
-"lua require'lspconfig'.pyright.setup{on_attach=require'cmp'.on_attach}
-"lua require'lspconfig'.tsserver.setup{on_attach=require'cmp'.on_attach}
-"lua require'lspconfig'.bashls.setup{on_attach=require'cmp'.on_attach}
-"lua require'lspconfig'.yamlls.setup{on_attach=require'cmp'.on_attach}
-"lua require'lspconfig'.clangd.setup{on_attach=require'cmp'.on_attach}
-
+" Define how menus work
 set completeopt=menuone,noinsert,noselect
+
+" Define how search result count works
 set shortmess+=c
 
+" Configure crayon usage
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
@@ -73,6 +71,7 @@ let g:lightline = {
 colorscheme dichromatic
 highlight Normal guibg=none
 
+" Key mapping
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
@@ -87,4 +86,5 @@ nnoremap <C-n> :n<CR>
 nnoremap <C-p> :N<CR>
 inoremap <leader>c <C-o>:call NERDComment(0,"toggle")<C-m>
 
+" Configure the completion part of nvim IDE
 lua require('completion.settings')
