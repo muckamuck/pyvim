@@ -26,17 +26,15 @@ apt-get install -y \
     ripgrep
 
 pip3 install virtualenv \
-    python-language-server[all] \
-    pyls-black \
     neovim \
     pdbpp
+#    python-language-server[all] \
+#    pyls-black \
 
 npm install -g typescript \
     typescript-language-server \
+    pyright \
     bash-language-server \
     yaml-language-server \
     dockerfile-language-server-nodejs \
     neovim
-
-
-
