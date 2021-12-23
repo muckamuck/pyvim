@@ -23,7 +23,6 @@ set noincsearch
 
 call plug#begin('~/.nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'tjdevries/nlua.nvim'
 Plug 'tjdevries/lsp_extensions.nvim'
 Plug 'romainl/vim-dichromatic'
@@ -33,27 +32,33 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'preservim/nerdcommenter'
+
+" Completion black box
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
 call plug#end()
 
 " Status line stuff for lightline
 set laststatus=2
 set noshowmode
 
-lua require'lspconfig'.pyright.setup{on_attach=require'cmp'.on_attach}
-lua require'lspconfig'.tsserver.setup{on_attach=require'cmp'.on_attach}
-lua require'lspconfig'.bashls.setup{on_attach=require'cmp'.on_attach}
-lua require'lspconfig'.yamlls.setup{on_attach=require'cmp'.on_attach}
-lua require'lspconfig'.clangd.setup{on_attach=require'cmp'.on_attach}
-
-autocmd BufEnter * lua require'cmp'.on_attach()
-
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"lua require'lspconfig'.pyright.setup{on_attach=require'cmp'.on_attach}
+"lua require'lspconfig'.tsserver.setup{on_attach=require'cmp'.on_attach}
+"lua require'lspconfig'.bashls.setup{on_attach=require'cmp'.on_attach}
+"lua require'lspconfig'.yamlls.setup{on_attach=require'cmp'.on_attach}
+"lua require'lspconfig'.clangd.setup{on_attach=require'cmp'.on_attach}
 
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
-let g:completion_trigger_keyword_length = 1
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
@@ -68,6 +73,9 @@ let g:lightline = {
 colorscheme dichromatic
 highlight Normal guibg=none
 
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 nnoremap <leader>l :!pylint %<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -78,3 +86,5 @@ nnoremap <TAB> <C-w>w
 nnoremap <C-n> :n<CR>
 nnoremap <C-p> :N<CR>
 inoremap <leader>c <C-o>:call NERDComment(0,"toggle")<C-m>
+
+lua require('completion.settings')
