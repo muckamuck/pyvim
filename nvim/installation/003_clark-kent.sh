@@ -16,9 +16,10 @@ curl -fLo \
     --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cd ${HOME}/.config/nvim
+ln -sf ${source_dir}/lua
 ln -sf ${source_dir}/init.vim
 ln -sf ${source_dir}/README.md
 
 cd ${HOME}/.config
-ln -s ${source_dir}/nvim/flake8
-ln -s ${source_dir}/nvim/pycodestyle
+ln -sf ${source_dir}/flake8
+ln -sf ${source_dir}/pycodestyle
