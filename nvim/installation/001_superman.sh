@@ -35,5 +35,8 @@ npm install -g typescript \
     typescript-language-server \
     bash-language-server \
     yaml-language-server \
+    dockerfile-language-server-nodejs \
     neovim
+
+
 

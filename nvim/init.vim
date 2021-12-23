@@ -23,7 +23,7 @@ set noincsearch
 
 call plug#begin('~/.nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'tjdevries/nlua.nvim'
 Plug 'tjdevries/lsp_extensions.nvim'
 Plug 'romainl/vim-dichromatic'
@@ -39,13 +39,13 @@ call plug#end()
 set laststatus=2
 set noshowmode
 
-lua require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
-lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
-lua require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach}
-lua require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
-lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.pyright.setup{on_attach=require'cmp'.on_attach}
+lua require'lspconfig'.tsserver.setup{on_attach=require'cmp'.on_attach}
+lua require'lspconfig'.bashls.setup{on_attach=require'cmp'.on_attach}
+lua require'lspconfig'.yamlls.setup{on_attach=require'cmp'.on_attach}
+lua require'lspconfig'.clangd.setup{on_attach=require'cmp'.on_attach}
 
-autocmd BufEnter * lua require'completion'.on_attach()
+autocmd BufEnter * lua require'cmp'.on_attach()
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
