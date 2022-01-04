@@ -23,13 +23,14 @@ apt-get install -y \
     npm \
     python3-dev \
     python3-pip \
+    flake8 \
+    pycodestyle \
+    pylint \
     ripgrep
 
 pip3 install virtualenv \
     neovim \
     pdbpp
-#    python-language-server[all] \
-#    pyls-black \
 
 npm install -g typescript \
     typescript-language-server \

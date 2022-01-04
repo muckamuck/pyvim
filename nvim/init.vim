@@ -32,6 +32,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'preservim/nerdcommenter'
+Plug 'mfussenegger/nvim-lint'
 
 " Completion black box
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -88,3 +89,11 @@ inoremap <leader>c <C-o>:call NERDComment(0,"toggle")<C-m>
 
 " Configure the completion part of nvim IDE
 lua require('completion.settings')
+
+" Linting
+lua require('lint').linters_by_ft = {python = {'flake8', 'pycodestyle'}}
+autocmd BufWritePost <buffer> lua require('lint').try_lint()
+autocmd BufRead <buffer> lua require('lint').try_lint()
+autocmd InsertLeave <buffer> lua require('lint').try_lint()
+autocmd TextChanged <buffer> lua require('lint').try_lint()
+

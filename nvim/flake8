@@ -8,4 +8,4 @@ ignore =
     W503,
     W504,
     # expected 1 blank line, found 0
-    E301,E302,
+    # E301,E302,
