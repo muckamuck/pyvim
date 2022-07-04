@@ -52,7 +52,8 @@ set laststatus=2
 set noshowmode
 
 " Define how menus work
-set completeopt=menuone,noinsert,noselect
+"set completeopt=menuone,noinsert,noselect
+set completeopt=menu,menuone,noselect
 
 " Define how search result count works
 set shortmess+=c

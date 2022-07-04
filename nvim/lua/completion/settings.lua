@@ -21,6 +21,7 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ["<Tab>"] = cmp.mapping.select_next_item({behavior=cmp.SelectBehavior.Insert})
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -63,6 +64,8 @@ cmp.setup.cmdline(':', {
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-  capabilities = capabilities
-}
+require('lspconfig')['tsserver'].setup { capabilities = capabilities }
+require('lspconfig')['bashls'].setup { capabilities = capabilities }
+require('lspconfig')['yamlls'].setup { capabilities = capabilities }
+require('lspconfig')['dockerls'].setup { capabilities = capabilities }
+require('lspconfig')['pyright'].setup { capabilities = capabilities }
