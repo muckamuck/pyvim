@@ -33,6 +33,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'preservim/nerdcommenter'
 Plug 'mfussenegger/nvim-lint'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Completion black box
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -83,6 +84,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fs <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope git_branches<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<cr>
 nnoremap <TAB> <C-w>w
 nnoremap <C-n> :n<CR>
 nnoremap <C-p> :N<CR>
@@ -90,6 +92,11 @@ inoremap <leader>c <C-o>:call NERDComment(0,"toggle")<C-m>
 
 " Configure the completion part of nvim IDE
 lua require('completion.settings')
+
+" Goto stuff
+"lua vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+"lua require('dptbinds.stuff')
+
 
 " Linting
 lua require('lint').linters_by_ft = {python = {'flake8', 'pycodestyle'}}
